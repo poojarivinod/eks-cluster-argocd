@@ -1,4 +1,5 @@
-# App of Apps
+# search in chatgpt as "i want a complete argocd application yaml" 
+#  This is the application that manages the namespaces, it watches any sync the "namespaces" repo in the https://github.com/poojarivinod/eks-cluster-argocd.git
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -6,11 +7,11 @@ metadata:
   namespace: argocd  # ArgoCD's namespace
   # dependency, lowest priorty will be created first
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "0" # 0 is the first priority to create the resource, the 
 spec:
   project: default
   source:
-    repoURL: https://github.com/DAWS-82S/eks-cluster-argocd.git
+    repoURL: https://github.com/poojarivinod/eks-cluster-argocd.git
     targetRevision: main   # or a tag/commit hash
     path: namespaces        # folder in repo with Kubernetes YAMLs
   destination:

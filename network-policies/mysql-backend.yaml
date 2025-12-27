@@ -1,3 +1,5 @@
+# search in chatgpt as "give me one kubernetes network policy yaml based on the pod label,mysql should accept connection from backend pod" 
+# mysql accepting traffic only from the backend 
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -5,7 +7,7 @@ metadata:
   namespace: expense  # Change to your namespace
 spec:
   podSelector:
-    matchLabels:
+    matchLabels: # copy the tags from the k8-expense --> mysql --> manifest.yaml
       app: mysql
       tier: mysql
       project: expense
@@ -14,7 +16,7 @@ spec:
   ingress:
     - from:
         - podSelector:
-            matchLabels:
+            matchLabels: # copy the tags from the k8-expense --> backend --> manifest.yaml
               app: backend
               tier: backend
               project: expense
