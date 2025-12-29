@@ -1,6 +1,7 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: roboshop
-  labels:
-    name: roboshop
+# search in google as "k8 namespace" --> Namespaces Walkthrough
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: roboshop
+#   labels:
+#     name: roboshop
