@@ -1,7 +1,7 @@
 # search in google as "k8 namespace" --> Namespaces Walkthrough
-# apiVersion: v1
-# kind: Namespace
-# metadata:
-#   name: expense
-#   labels:
-#     name: expense
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: expense
+  labels:
+    name: expense
