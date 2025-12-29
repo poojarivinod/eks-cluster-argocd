@@ -17,13 +17,13 @@ spec:
     server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
-    # automated:
-    #   prune: true       # If we delete resource in github, argocd  will automatically delete in the kubernetes       
-    #   selfHeal: true    # If we change resource in github, argocd  will automatically changes in the kubernetes   
-    # for manual sync comment the syncpolicy
     automated:
-      prune: false      # If we delete resource in github, argocd  will automatically delete in the kubernetes       
-      selfHeal: false    # If we change resource in github, argocd  will automatically changes in the kubernetes   
+      prune: true       # If we delete resource in github, argocd  will automatically delete in the kubernetes       
+      selfHeal: true    # If we change resource in github, argocd  will automatically changes in the kubernetes   
+    # for manual sync comment the syncpolicy
+    # automated:
+    #   prune: false      # If we delete resource in github, argocd  will automatically delete in the kubernetes       
+    #   selfHeal: false    # If we change resource in github, argocd  will automatically changes in the kubernetes   
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
